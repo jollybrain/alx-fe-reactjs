@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
     return (
         <footer>
-            <p>© 2023 City Lovers</p>
+            <p>© 2024 City Lovers</p>
         </footer>
      
        
