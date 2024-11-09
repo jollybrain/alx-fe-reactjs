@@ -1,7 +1,15 @@
-import WelcomeMessage from './WelcomeMessage';
+import { Component } from 'react';
+import WelcomeMessage from './WelcomeMessage'
 
-function App() {
-    return <div><WelcomeMessage /></div>
+class App extends Component {
+    render() {
+        return (
+            <div className='App'>
+                <WelcomeMessage />
+            </div>
+        );
+    }
+    
 }
 
 export default App;
