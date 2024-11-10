@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import WelcomeMessage from './components/WelcomeMessage'
-import Header from './Header';
-import MainContent from './MainContent';
-import Footer from './Footer';
+import Header from './components/header';
+import MainContent from './components/maincontent';
+import Footer from './components/footer';
 
 class App extends Component {
     render() {
