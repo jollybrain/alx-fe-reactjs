@@ -1,9 +1,9 @@
-
+import React from 'react';
 import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/header';
 import MainContent from './components/maincontent';
 import Footer from './components/footer';
-
+import UserProfile from './components/UserProfile';
 class App extends Component {
     render() {
         return (
@@ -68,5 +68,17 @@ function Header() {
   }
   
   
+
+// src/App.jsx
+
+
+function App() {
+  return (
+    <div>
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+      {/* You can add more UserProfile components with different props if needed */}
+    </div>
+  );
+}
 
 export default App;
