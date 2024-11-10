@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1"
   }
 }

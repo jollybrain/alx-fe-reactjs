@@ -1,4 +1,4 @@
-import { Component } from 'react';
+
 import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/header';
 import MainContent from './components/maincontent';
