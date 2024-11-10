@@ -15,14 +15,18 @@ class App extends Component {
     
 }
 
-function App() {
-    return (
-      <div>
-        <Header />
-        <MainContent />
-        <Footer />
-      </div>
-    );
-  }
+class App extends Component() {
+    
+    render() {
+        return (
+            <div className='App'>
+                <Header />
+                <MainContent />
+                <Footer />
+            </div>
+        );
+    }
+
+}    
 
 export default App;
