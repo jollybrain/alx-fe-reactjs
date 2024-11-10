@@ -15,4 +15,14 @@ class App extends Component {
     
 }
 
+function App() {
+    return (
+      <div>
+        <Header />
+        <MainContent />
+        <Footer />
+      </div>
+    );
+  }
+
 export default App;
