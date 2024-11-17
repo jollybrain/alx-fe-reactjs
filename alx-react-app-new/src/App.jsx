@@ -4,6 +4,8 @@ import Header from './components/header';
 import MainContent from './components/maincontent';
 import Footer from './components/footer';
 import UserProfile from './components/UserProfile';
+import Counter from './components/Counter';
+
 class App extends Component {
     render() {
         return (
@@ -80,5 +82,12 @@ function App() {
     </div>
   );
 }
-
+function App() {
+  return (
+    <div>
+      <h1 style={{ textAlign: 'center', color: 'navy' }}>React Counter Application</h1>
+      <Counter />
+    </div>
+  );
+}
 export default App;
