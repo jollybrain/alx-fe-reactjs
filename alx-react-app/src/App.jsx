@@ -14,22 +14,20 @@ class App extends Component {
             </div>
         );
     }
-    
-}
 
-class App extends Component() {
-    
     render() {
-        return (
-            <div className='App'>
-                <Header />
-                <MainContent />
-                <Footer />
-            </div>
-        );
-    }
+      return (
+          <div className='App'>
+              <Header />
+              <MainContent />
+              <Footer />
+          </div>
+      );
+  }
 
+    
 }
+
 
 // Header Component
 function Header() {
