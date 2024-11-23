@@ -1,10 +1,11 @@
 import React from 'react';
 import WelcomeMessage from './components/WelcomeMessage';
 import Header from './components/header';
-import MainContent from './components/maincontent';
+import MainContent from './components/MainContent';
 import Footer from './components/footer';
 import UserProfile from './components/UserProfile';
 import Counter from './components/Counter';
+import index from './index';
 
 // Main App Component
 function App() {
