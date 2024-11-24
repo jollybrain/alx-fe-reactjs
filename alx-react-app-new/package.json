@@ -4,12 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "start:dev": "vite",
-    "start:prod": "vite build && node server.js",
-    "build:dev": "vite build",
-    "build:prod": "vite build --production",
-    "dev": "react-scripts start",
+    "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
