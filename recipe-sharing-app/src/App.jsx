@@ -8,8 +8,9 @@ import SearchBar from './components/SearchBar';
 const App = () => {
   return (
     <Router>
-      <div>
+      <div style={{ padding: '20px' }}>
         <h1>Recipe Sharing App</h1>
+        <SearchBar />
         <Routes>
           <Route path="/" element={<RecipeList />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} />
@@ -17,22 +18,7 @@ const App = () => {
         </Routes>
       </div>
     </Router>
-    
-  );
-  return (
-    <Router>
-      <div style={{ padding: '20px' }}>
-        <h1>Recipe Sharing App</h1>
-        <SearchBar />
-        <Routes>
-          <Route path="/" element={<RecipeList />} />
-          <Route path="/add" element={<AddRecipeForm />} />
-        </Routes>
-      </div>
-    </Router>
   );
 };
-
-
 
 export default App;
