@@ -1,27 +1,24 @@
-import React, { useEffect } from 'react';
-import { useRecipeStore } from './recipeStore';
-import SearchBar from './SearchBar';
-import RecipeList from './RecipeList';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeDetails from './components/RecipeDetails';
 
 const App = () => {
-  const setRecipes = useRecipeStore((state) => state.setRecipes);
-
-  useEffect(() => {
-    // Simulate fetching recipes from an API
-    const fetchedRecipes = [
-      { id: 1, title: 'Spaghetti Bolognese', description: 'A classic Italian dish.' },
-      { id: 2, title: 'Chicken Curry', description: 'Spicy and delicious.' },
-      { id: 3, title: 'Vegan Salad', description: 'Healthy and fresh.' },
-    ];
-    setRecipes(fetchedRecipes);
-  }, [setRecipes]);
-
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Recipe Sharing App</h1>
-      <SearchBar />
-      <RecipeList />
-    </div>
+    <Router>
+      <div style={{ padding: '20px' }}>
+        <h1>Recipe Sharing App</h1>
+        <Routes>
+          {/* Route to the main Recipe List */}
+          <Route path="/" element={<RecipeList />} />
+          {/* Route to add a new recipe */}
+          <Route path="/add-recipe" element={<AddRecipeForm />} />
+          {/* Route to view details of a specific recipe */}
+          <Route path="/recipe/:id" element={<RecipeDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
