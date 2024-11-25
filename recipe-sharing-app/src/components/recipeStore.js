@@ -27,3 +27,8 @@ export const useRecipeStore = create((set) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== recipeId),
     })),
 }));
+filteredRecipes: state.recipes.filter((recipe) =>
+  recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
+  recipe.ingredients.some((ingredient) => ingredient.toLowerCase().includes(state.searchTerm.toLowerCase())) ||
+  recipe.prepTime <= parseInt(state.searchTerm)
+)
