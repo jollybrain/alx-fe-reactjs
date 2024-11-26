@@ -1,11 +1,11 @@
-import React from "react";
-
-const main = ({ content }) => {
+const MainContent = () => {
   return (
-    <main style={{ padding: '20px', backgroundColor: '#f0f8ff', borderRadius: '5px', margin: '10px' }}>
-      <p style={{ fontSize: '16px', lineHeight: '1.5' }}>{content || "I love to visit New York, Paris, and Tokyo."}</p>
+    <main style={{ padding: '20px', lineHeight: '1.6', backgroundColor: '#f9f9f9' }}>
+      <p>Welcome to the application where you can explore your favorite cities.</p>
+      <p>Discover unique details about each location!</p>
     </main>
   );
 };
 
 export default MainContent;
+
