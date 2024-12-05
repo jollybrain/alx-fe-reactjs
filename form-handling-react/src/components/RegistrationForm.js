@@ -12,11 +12,11 @@ const RegistrationForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Basic validation
         if (!formData.username || !formData.email || !formData.password) {
             setError('All fields are required.');
             return;
         }
+
         setError('');
         console.log('Form submitted', formData);
 

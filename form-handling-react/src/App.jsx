@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RegistrationForm from './components/RegistrationForm';
-import FormikForm from './components/FormikForm.';
+import FormikForm from './components/FormikForm';
 
 const App = () => {
     const [useFormik, setUseFormik] = useState(false);
@@ -24,4 +24,3 @@ const App = () => {
 };
 
 export default App;
-
