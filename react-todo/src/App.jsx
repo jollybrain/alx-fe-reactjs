@@ -1,6 +1,6 @@
-import React from 'react';
-import TodoList from './TodoList';
-import AddTodoForm from './components/AddTodoForm';
+import React from "react";
+import TodoList from "./components/TodoList"; // Adjusted import path
+import AddTodoForm from "./components/AddTodoForm"; // Import kept for future use if needed
 
 function App() {
   return (
