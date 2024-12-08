@@ -8,4 +8,13 @@ module.exports = {
   },
   plugins: [], // Add Tailwind plugins here if required.
   darkMode: "class", // Optional: "media" or "class".
+  
+};
+module.exports = {
+  theme: {
+    extend: {
+      display: ["group-hover", "hover"], // Enable `hover` and `group-hover` for the `display` utility.
+    },
+  },
+  plugins: [],
 };
