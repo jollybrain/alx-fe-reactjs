@@ -1,5 +1,5 @@
 module.exports = {
-  content: [
+  purge: [
     "./src/**/*.{js,jsx,ts,tsx}", // Define the paths to your files to scan for class names.
     "./public/index.html",
   ],
