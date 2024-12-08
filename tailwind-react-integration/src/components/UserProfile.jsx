@@ -9,10 +9,10 @@ const UserProfile = () => {
         alt="User Profile"
         className="w-32 h-32 sm:w-24 sm:h-24 md:w-36 md:h-36 rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
       />
-      <h1 className="text-lg md:text-xl font-semibold hover:text-blue-500 transition-colors duration-300">
+      <h1 className="text-lg md:text-xl font-semibold text-blue-800 hover:text-blue-500 transition-colors duration-300 my-4">
         John Doe
       </h1>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 my-4">
         Software Developer
       </p>
     </div>
