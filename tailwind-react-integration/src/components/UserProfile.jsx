@@ -1,20 +1,21 @@
-function UserProfile() {
-    return (
-      <div className="bg-gray-100 sm:p-4 md:p-8 max-w-xs md:max-w-sm mx-auto my-10 sm:my-20 rounded-lg shadow-lg">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="User"
-          className="rounded-full sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto"
-        />
-        <h1 className="text-lg sm:text-xl md:text-xl text-blue-800 my-4 text-center">
-          John Doe
-        </h1>
-        <p className="text-sm sm:text-base text-gray-600 text-center">
-          Developer at Example Co. Loves to write code and explore new technologies.
-        </p>
-      </div>
-    );
-  }
-  
-  export default UserProfile;
+import React from 'react';
+
+const UserProfile = () => {
+  return (
+    <div className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out">
+      <img
+        src="profile-image-url.jpg"
+        alt="User Profile"
+        className="w-32 h-32 rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+      />
+      <h1 className="text-2xl font-semibold hover:text-blue-500 transition-colors duration-300">
+        John Doe
+      </h1>
+      <p className="text-gray-500">Software Developer</p>
+    </div>
+  );
+};
+
+export default UserProfile;
+
   
