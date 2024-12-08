@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const UserProfile = () => {
@@ -12,7 +11,7 @@ const UserProfile = () => {
       <h1 className="text-lg md:text-xl font-semibold text-blue-800 hover:text-blue-500 transition-colors duration-300 my-4">
         John Doe
       </h1>
-      <p className="text-sm text-gray-500 my-4">
+      <p className="text-base text-gray-600 my-4">
         Software Developer
       </p>
     </div>
@@ -20,3 +19,4 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
+
