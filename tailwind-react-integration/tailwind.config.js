@@ -18,3 +18,12 @@ module.exports = {
   },
   plugins: [],
 };
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // Include all relevant files to scan for Tailwind class usage.
+  ],
+  theme: {
+    extend: {}, // Use this section to extend or override the default theme.
+  },
+  plugins: [], // Add any additional plugins here.
+};
