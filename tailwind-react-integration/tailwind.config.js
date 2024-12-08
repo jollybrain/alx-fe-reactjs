@@ -12,16 +12,19 @@ module.exports = {
   darkMode: "class", // Optional: "media" or "class".
   
 };
+
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {},
   },
   plugins: [
     plugin(function ({ addVariant }) {
-      addVariant("child", "& > *"); // Adds a custom "child" variant
+      addVariant("custom-variant", "&:custom"); // Example: Adds a custom variant
     }),
   ],
 };
