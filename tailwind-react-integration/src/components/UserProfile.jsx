@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const UserProfile = () => {
@@ -9,10 +8,12 @@ const UserProfile = () => {
         alt="User Profile"
         className="w-32 h-32 rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
       />
-      <h1 className="text-2xl font-semibold hover:text-blue-500 transition-colors duration-300">
+      <h1 className="text-lg md:text-xl font-semibold hover:text-blue-500 transition-colors duration-300">
         John Doe
       </h1>
-      <p className="text-gray-500">Software Developer</p>
+      <p className="text-sm text-gray-500">
+        Software Developer
+      </p>
     </div>
   );
 };
