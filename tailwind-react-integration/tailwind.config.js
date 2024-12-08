@@ -1,19 +1,18 @@
 module.exports = {
-  purge: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Define the paths to your files to scan for class names.
-    "./public/index.html",
-  ],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: false, // You can enable dark mode if needed
   theme: {
-    extend: {
-      display: ["group-hover", "hover"], // Enable `hover` and `group-hover` for the `display` utility.
-    }, // Extend the default theme if needed.
+    extend: {},
   },
-  plugins: [
-    plugin(function ({ addVariant }) {
-      addVariant("custom-variant", "&:custom"); // Example: Adds a custom variant
-    }),
-  ], // Add Tailwind plugins here if required.
-  darkMode: "class", // Optional: "media" or "class".
-  
+  variants: {
+    extend: {
+      // Example: Enabling hover and focus variants for background color
+      backgroundColor: ['hover', 'focus'],
+      textColor: ['hover', 'focus'],
+      // Add more utilities and their variants as needed
+    },
+  },
+  plugins: [],
 };
+
 
