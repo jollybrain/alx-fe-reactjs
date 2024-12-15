@@ -20,3 +20,4 @@ export const fetchUserData = async (username) => {
         throw new Error('Something went wrong. Please try again.');
     }
 };
+

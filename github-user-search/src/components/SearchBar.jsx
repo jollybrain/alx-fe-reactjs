@@ -11,3 +11,4 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+s
