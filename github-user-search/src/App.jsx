@@ -1,13 +1,13 @@
+// src/App.jsx
 import React, { useState } from 'react';
 import Search from './components/Search';
-import { fetchUserData } from './services/githubService'; // Import the API service
+import { fetchUserData } from './services/githubService';
 
 const App = () => {
     const [userData, setUserData] = useState(null); // Holds GitHub user data
     const [loading, setLoading] = useState(false); // Indicates loading state
     const [error, setError] = useState(null); // Holds error messages
 
-    // Function to handle searching for a user
     const handleSearch = async (username) => {
         setLoading(true); // Start loading
         setError(null); // Clear previous errors
@@ -26,14 +26,21 @@ const App = () => {
     return (
         <div style={{ textAlign: 'center', padding: '20px' }}>
             <h1>GitHub User Search</h1>
-            <Search onSearch={handleSearch} /> {/* Search component */}
-            
+            <Search onSearch={handleSearch} /> {/* Pass the search handler */}
+
             {loading && <p>Loading...</p>} {/* Show loading state */}
-            
             {error && <p style={{ color: 'red' }}>{error}</p>} {/* Show error message */}
-            
-            {userData && ( /* Show user data if available */
-                <div style={{ marginTop: '20px', border: '1px solid #ddd', padding: '20px', borderRadius: '10px', display: 'inline-block', textAlign: 'left' }}>
+            {userData && ( /* Display user details when available */
+                <div
+                    style={{
+                        marginTop: '20px',
+                        border: '1px solid #ddd',
+                        padding: '20px',
+                        borderRadius: '10px',
+                        display: 'inline-block',
+                        textAlign: 'left',
+                    }}
+                >
                     <img
                         src={userData.avatar_url}
                         alt={userData.login}
@@ -44,7 +51,11 @@ const App = () => {
                     <p><strong>Public Repos:</strong> {userData.public_repos}</p>
                     <p><strong>Followers:</strong> {userData.followers}</p>
                     <p>
-                        <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
+                        <a
+                            href={userData.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             View GitHub Profile
                         </a>
                     </p>

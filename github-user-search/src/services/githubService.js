@@ -14,7 +14,6 @@ export const fetchUserData = async (username) => {
         const response = await axios.get(`${BASE_URL}/users/${username}`);
         return response.data; // Return the user data if successful
     } catch (error) {
-        // Handle errors, including if the user is not found
         if (error.response && error.response.status === 404) {
             throw new Error('Looks like we can’t find the user');
         }

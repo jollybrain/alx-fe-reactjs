@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 
 const Search = ({ onSearch }) => {
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(''); // State for the input field
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent form from refreshing the page
+        e.preventDefault(); // Prevent the default form submission behavior
         if (input.trim()) {
-            onSearch(input); // Call the parent function with the input value
+            onSearch(input); // Pass the input to the parent component's search handler
         }
         setInput(''); // Clear the input field after search
     };
@@ -17,7 +17,7 @@ const Search = ({ onSearch }) => {
             <input
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={(e) => setInput(e.target.value)} // Update state with the input value
                 placeholder="Enter GitHub username"
                 style={{
                     padding: '10px',
@@ -27,7 +27,16 @@ const Search = ({ onSearch }) => {
                     borderRadius: '5px',
                 }}
             />
-            <button type="submit" style={{ padding: '10px 20px', borderRadius: '5px', background: '#007BFF', color: 'white', border: 'none' }}>
+            <button
+                type="submit"
+                style={{
+                    padding: '10px 20px',
+                    borderRadius: '5px',
+                    background: '#007BFF',
+                    color: 'white',
+                    border: 'none',
+                }}
+            >
                 Search
             </button>
         </form>
