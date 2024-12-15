@@ -1,7 +1,6 @@
 // src/services/githubService.js
 import axios from 'axios';
 
-// Base URL for the GitHub API
 const BASE_URL = 'https://api.github.com';
 
 /**
@@ -13,8 +12,12 @@ const BASE_URL = 'https://api.github.com';
 export const fetchUserData = async (username) => {
     try {
         const response = await axios.get(`${BASE_URL}/users/${username}`);
-        return response.data; // Returns user data if successful
+        return response.data; // Return the user data if successful
     } catch (error) {
-        throw new Error('User not found'); // Throws an error if user doesn't exist
+        // Handle errors, including if the user is not found
+        if (error.response && error.response.status === 404) {
+            throw new Error('Looks like we can’t find the user');
+        }
+        throw new Error('Something went wrong. Please try again.');
     }
 };
