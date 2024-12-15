@@ -13,8 +13,8 @@ const BASE_URL = 'https://api.github.com';
 export const fetchUserData = async (username) => {
     try {
         const response = await axios.get(`${BASE_URL}/users/${username}`);
-        return response.data; // Returns the user data if successful
+        return response.data; // Returns user data if successful
     } catch (error) {
-        throw new Error('User not found'); // Throws an error if the user does not exist
+        throw new Error('User not found'); // Throws an error if user doesn't exist
     }
 };
