@@ -1,27 +1,38 @@
 // src/services/githubService.js
-import axios from 'axios';
 
-const BASE_URL = 'https://api.github.com';
+const BASE_URL = "https://api.github.com";
 
 /**
- * Fetches user data from the GitHub API based on advanced search criteria.
- * @param {string} username - The GitHub username to search for.
- * @param {string} location - The location to filter by (optional).
- * @param {number} minRepos - The minimum number of repositories to filter by (optional).
- * @returns {Promise<Object>} - A promise resolving to the user data.
- * @throws Will throw an error if the search fails.
+ * Searches GitHub users with advanced query parameters.
+ * @param {string} username - The username to search for.
+ * @param {string} [location] - The location filter (optional).
+ * @param {number} [minRepos] - The minimum repository count filter (optional).
+ * @param {number} [page=1] - The page number for paginated results (default is 1).
+ * @param {number} [perPage=30] - The number of results per page (default is 30).
+ * @returns {Promise<Array>} - A promise that resolves to an array of user objects.
  */
-export const fetchUserData = async (username, location, minRepos) => {
-    try {
-        // Construct the query parameters
-        let query = `user:${username}`;
-        if (location) query += `+location:${location}`;
-        if (minRepos) query += `+repos:>${minRepos}`;
+export const searchGitHubUsers = async (username, location = "", minRepos = 0, page = 1, perPage = 30) => {
+  // Construct the query string
+  let query = `q=${username}`;
+  if (location) query += `+location:${location}`;
+  if (minRepos) query += `+repos:>=${minRepos}`;
 
-        // Make the API request with the constructed query
-        const response = await axios.get(`${BASE_URL}/search/users?q=${query}`);
-        return response.data; // Return the search results
-    } catch (error) {
-        throw new Error('Failed to fetch user data');
+  // Add pagination parameters
+  const url = `${BASE_URL}/search/users?${query}&page=${page}&per_page=${perPage}`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
     }
+    const data = await response.json();
+    return data.items || [];
+  } catch (error) {
+    console.error("Error fetching GitHub users:", error);
+    throw error; // Rethrow the error for higher-level handling
+  }
 };
