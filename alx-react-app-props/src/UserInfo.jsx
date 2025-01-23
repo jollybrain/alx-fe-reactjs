@@ -1,7 +1,8 @@
-import UserDetails from './UserDetails';
+import React from 'react';
+import UserInfo from './UserInfo';
 
-function UserInfo() {
-  return <UserDetails />;
+function ProfilePage() {
+  return <UserInfo />;
 }
 
-export default UserInfo;
+export default ProfilePage;
