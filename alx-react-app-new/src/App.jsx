@@ -1,6 +1,6 @@
 import React from 'react';
 import WelcomeMessage from './components/WelcomeMessage';
-import Header from './components/header';
+import Header from './components/Header';
 import MainContent from './components/maincontent';
 import Footer from './components/footer';
 import UserProfile from './components/UserProfile';
